@@ -1,0 +1,62 @@
+<% layout('layouts/boilerplate') %>
+
+<style>
+    .aprender {
+        margin-top: 80px;
+    }
+</style>
+
+<section class="aprender">
+    <div class="shows">
+        <div class="shows__header">
+            <div class="container">
+                <div class="shows__lecciones">
+                    <img src="<%= capitulos.icon %>" alt="logo <%= capitulos.capitulo %>">
+                    <div class="header__aprender">
+                        <a href="/ojos-lecciones/<%= capitulos.query %>">
+                            <h3><%= capitulos.lecciones %> </h3>
+                        </a>
+                        <h1><%= capitulos.capitulo %> </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container--px">
+            <div class="aprender__grid">
+                <% for (let subcapitulo of subcapitulos) {%>
+                    <div class="aprender__card">
+                        <div class="aprender__subcapitulo">
+                            <h3><%= subcapitulo.subcapitulo %> </h3>
+                        </div>
+
+                        <div class="aprender__contenido">
+                            <div class="aprender__keterangan">
+                                <h4>aprender</h4>
+                            </div>
+
+                            <div class="aprender__videos">
+                                <% for (let contenido of contenidos) {%> 
+                                    <% if(contenido.subcapitulo == subcapitulo.subcapitulo) {%>
+                                        <div class="contenido">
+                                            <i class="uil uil-play-circle"></i>
+                                            <div class="titulo">
+                                                <a data-modal-target="#modal" href="/ojos-lecciones/<%= contenido.query %>/<%= contenido.querycapitulo %>/<%= contenido.querytitulo %>">
+                                                    <%= contenido.titulo %>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <%  }%>
+                                <%  }%> 
+                            </div>
+                        </div>
+                    </div>
+                <%  }%>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script async>
+    document.title = "<%= capitulos.capitulo %> | FibonaSer";
+</script>

@@ -1,0 +1,103 @@
+<% layout('layouts/boilerplate') %> 
+
+<style>
+    .pengaturans {
+        margin-top: 80px;
+    }
+</style>
+
+<section class="pengaturans">
+    <%- include('../partials/flash') %>
+    <div class="pengaturan container container--px">
+        <div class="pengaturan__intro">
+            <h1>Pengaturan</h1>
+        </div>
+
+        <div class="pengaturan__grid">
+            <div class="pengaturan__card">
+                <div class="pengaturan__isi">
+                    <form class="pengaturan__form" action="/pengaturan/akun?_method=PUT" method="POST" novalidate class="validated-form">
+                        <div class="judul">
+                            <div class="pilihan-akun">
+                                <a href="/pengaturan/akun"><h3 class="akun">Akun</h3></a>
+                                <a href="/pengaturan/password"><h3 class="password">Password</h3></a>
+                            </div>
+                            <hr>
+                        </div>
+                        <!-- <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Foto Profil</label>
+                            <label class="mb-3 deskripsi" for="description">Foto hanya bisa dirubah, tidak bisa dihapus.</label>
+                            <input class="foto-profil" type="file" id="image" class="pengaturan__input" name="image" required>
+                            <div id="validation-message-image" class=""></div>
+                        </div> -->
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Nama Lengkap</label>
+                            <input class="" type="text" id="nama" class="pengaturan__input" value="<%= user.nama %>" name="nama" required>
+                            <div id="validation-message-nama" class=""></div>
+                        </div>
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Username</label>
+                            <label class="mb-3 deskripsi" for="description">Username akan muncul di alamat FibonacciKu kamu.
+                                https://www.fibonacciku.com/fibo/</label>
+                            <input class="" type="text" id="username" class="pengaturan__input" value="<%= user.username %>" name="username" required>
+                            <div id="validation-message-username" class=""></div>
+                        </div>
+                            
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Email</label>
+                            <label class="mb-3 deskripsi" for="description">Dengan mempunyai email, kamu dapat merubah pengaturan akun kamu yang lain.</label>
+                            <input class="" type="email" id="email" class="pengaturan__input" value="<%= user.email %>" name="email">
+                            <div id="validation-message-email" class=""></div>
+                        </div>
+        
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Bio</label>
+                            <textarea class="" type="text" id="bio" cols="0" rows="5" maxlength="256" class="pengaturan__input" name="bio"><%= user.bio %></textarea>
+                            <div id="validation-message-bio" class=""></div>
+                        </div>
+
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Website</label>
+                            <label class="mb-3 deskripsi" for="description">Tulis website kamu: websitekamu.com</label>
+                            <input class="" type="text" id="web" class="pengaturan__input" value="<%= user.website %>" name="web">
+                            <div id="validation-message-web" class=""></div>
+                        </div>
+
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Instagram</label>
+                            <label class="mb-3 deskripsi" for="description">Username saja tanpa @</label>
+                            <input class="" type="text" id="instagram" class="pengaturan__input" value="<%= user.instagram %>" name="instagram">
+                            <div id="validation-message-instagram" class=""></div>
+                        </div>
+
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">GitHub</label>
+                            <label class="mb-3 deskripsi" for="description">Username saja</label>
+                            <input class="" type="text" id="github" class="pengaturan__input" value="<%= user.github %>" name="github">
+                            <div id="validation-message-github" class=""></div>
+                        </div>
+
+                        <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Twitter</label>
+                            <label class="mb-3 deskripsi" for="description">Username saja tanpa @</label>
+                            <input class="" type="text" id="twitter" class="pengaturan__input" value="<%= user.twitter %>" name="twitter">
+                            <div id="validation-message-twitter" class=""></div>
+                        </div>
+            
+                        <div>
+                            <button type="submit" id="btn-submit" class="form-group btn-valid-error">
+                                Simpan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/profil/akun.js" async></script>
+
+<script async>
+    document.title = 'Pengaturan - Akun | FibonacciKu'
+</script>

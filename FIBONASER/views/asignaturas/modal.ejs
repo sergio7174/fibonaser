@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') %>
+
+<section class="modal_video">
+    
+    <div class="modals container container--px" id="modal">
+
+        <div class="modals__card">
+            <div class="modals__header">
+                <div class="modals__titulo">
+                    <h3>
+                        <%= video.titulo %>
+                    </h3>
+
+                    <a href="javascript:history.back()" class="close-button">&times;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="modals__body">
+                <iframe class="modals__iframe" title="<%= video.tipe %>: <%= video.titulo %>" src="<%= video.link %>?autoplay=1&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&cc_lang_pref=id&enablejsapi=1&origin=https%3A%2F%2Fwww.fibonacciku.com" width="800" height="570" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- <div class="modals__button">
+            <a href="javascript:history.back()" class="button">
+                Kembali
+            </a>
+        </div> -->
+        
+    </div>
+
+</section>
+
+<script async>
+    document.title = "<%= video.titulo %> | FibonaSer";
+</script>

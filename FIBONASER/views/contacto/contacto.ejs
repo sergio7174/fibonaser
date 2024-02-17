@@ -1,0 +1,89 @@
+<% layout('layouts/boilerplate') %>
+
+<style>
+    .contacto-form {
+        background-color: rgb(255, 248, 243);
+        margin-top: 80px;
+    }
+</style>
+
+<section class="contacto-form">
+    <%- include('../partials/flash') %>
+    <div class="contacto container container--pall">
+        <div class="contacto__intro">
+            <h1>¡Puedes contactarnos!</h1>
+            <p>
+                Si tiene alguna sugerencia o aporte para nosotros, puede completar el formulario a continuación !
+
+
+            </p>
+            <p>
+                O incluso si desea cooperar con nosotros, estaremos encantados de abrirle los brazos.
+            </p>
+        </div>
+        <div class="contacto__container grid">
+    
+            <div class="contacto__grid">
+                
+                <div class="contacto__information">
+                    <i class="uil uil-phone contacto__icon"></i>
+    
+                    <div>
+                        <h3 class="contacto__title">Telepon</h3>
+                        <span class="contacto__subtitle">+49-17669341393</span>
+                    </div>
+                </div>
+                <div class="contacto__information">
+                    <i class="uil uil-map-marker contacto__icon"></i>
+    
+                    <div>
+                        <h3 class="contacto__title">Lokasi</h3>
+                        <span class="contacto__subtitle">Regensburg - Jerman, Plato Wild Str. 2A, Nr. 1024</span>
+                    </div>
+                </div>
+                <div class="contacto__information">
+                    <div class="contacto__foto">
+                        <img src="img/icon/contacto-icon.png">
+                    </div>
+                </div>
+            </div>
+    
+            <form action="/contacto?_method=PUT" method="POST" class="contacto__form grid validated-form" novalidate>
+                    
+                <div class="contacto__contenido">
+                    <label for="" class="contacto__label form-label">Nombre completo</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" class="contacto__input" required>
+                </div>
+                <div class="contacto__contenido">
+                    <label for="" class="contacto__label form-label">Email</label>
+                    <input class="form-control" type="email" id="email" name="email" class="contacto__input" required>
+                </div>
+                    
+                <div class="contacto__contenido">
+                    <label for="" class="contacto__label form-label">Sujeto</label>
+                    <input class="form-control" type="text" id="subject" name="sujeto" class="contacto__input" required>
+                </div>
+
+                <div class="contacto__contenido">
+                    <label for="" class="contacto__label form-label">Orden</label>
+                    <textarea class="form-control" type="text" id="orden" cols="0" rows="9" name="orden" class="contacto__input" required></textarea>
+                </div>
+    
+                <div>
+                    <button type="submit">
+                        Enviar orden ..
+                        <i class="uil uil-message button__icon"></i>
+                    </button>
+                </div>
+            </form>
+    
+        </div>
+    </div>
+
+</section>
+
+<!-- <script src="/js/contacto/script.js"></script> -->
+
+<script async>
+    document.title = "contacto | FibonaSer";
+</script>

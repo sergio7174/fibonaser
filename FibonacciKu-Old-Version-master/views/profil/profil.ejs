@@ -1,0 +1,69 @@
+<% layout('layouts/boilerplate') %> 
+
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+<style>
+    .profils {
+        margin-top: 80px;
+    }
+
+    .alert {
+        margin-top: 0;
+    }
+</style>
+
+<section class="profils">
+    <div class="profil">
+
+        <div class="profil__background">
+            <img src="<%= username.background %>" alt="background">
+        </div>
+        <%- include('../partials/flash') %>
+        <div class="container container--px">
+            <div class="profil__info">
+                <div class="profil__avatar">
+                    <img src="<%= username.avatar.path %>" alt="foto profil <%= username.username %>">
+                    <% if(user.username == username.username) {%> 
+                    <div class="edit-foto">
+                        <form action="/fibo/<%= user.username %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <label for="avatar" name="avatar" class="custom-foto-upload">Ganti Foto</label>
+                            <input type="file" onchange="form.submit()" id="avatar" name="avatar" class="custom-file-input" accept="image/png, image/jpg, image/jpeg"/>
+                        </form>
+                    </div>
+                    <% } %> 
+                </div>
+                <div class="profil__username">
+                    <div class="user">
+                        <h2><%= username.username %></h2>
+                        <% if(user.username == username.username) {%> 
+                            <a href="/pengaturan/akun"><i class="uil uil-setting"></i></a>
+                        <% } %>
+                    </div>
+
+                    <div class="nama">
+                        <h3><%= username.nama %> </h3>
+                        <p><%= username.bio %></p>
+                        <a href="https://www.<%= username.website %>" class="website" target="_blank"><%= username.website %></a>
+                        <div class="link">
+                            <% if(username.instagram) { %>
+                            <a href="https://www.instagram.com/<%= username.instagram %>" target="_blank"><img src="/img/profile/instagram-icon.png" alt="logo instagram"></a>
+                            <% } %>
+                            <% if(username.github) { %> 
+                            <a href="http://github.com/<%= username.github %>" target="_blank"><img src="/img/profile/github-icon.png" alt="logo github"></a>
+                            <% } %> 
+                            <% if(username.twitter) { %> 
+                            <a href="https://twitter.com/<%= username.twitter %>" target="_blank"><img src="/img/profile/twitter-icon.png" alt="logo twitter"></a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
+
+<script async>
+    document.title = "<%= username.username %> | FibonacciKu";
+</script>

@@ -1,0 +1,105 @@
+<% layout('layouts/boilerplate') %> 
+
+<style>
+    .acuerdos {
+        margin-top: 80px;
+    }
+</style>
+
+<section class="acuerdos">
+    <%- include('../partials/flash') %>
+    <div class="acuerdo container container--px">
+        <div class="acuerdo__intro">
+            <h1>Acuerdo</h1>
+        </div>
+
+        <div class="acuerdo__grid">
+            <div class="acuerdo__card">
+                <div class="acuerdo__contenido">
+                    <form class="acuerdo__form" action="/acuerdo/cuenta?_method=PUT" method="POST" novalidate class="validated-form">
+                        <div class="titulo">
+                            <div class="eleccion-cuenta">
+                                <a href="/acuerdo/cuenta"><h3 class="cuenta">Cuenta</h3></a>
+                                <a href="/acuerdo/password"><h3 class="password">Password</h3></a>
+                            </div>
+                            <hr>
+                        </div>
+                        <!-- <div class="pengaturan__konten">
+                            <label for="" class="pengaturan__label form-label">Foto Profil</label>
+                            <label class="mb-3 deskripsi" for="description">Foto hanya bisa dirubah, tidak bisa dihapus.</label>
+                            <input class="foto-profil" type="file" id="image" class="pengaturan__input" name="image" required>
+                            <div id="validation-message-image" class=""></div>
+                        </div> -->
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">Nombre completo</label>
+                            <input class="" type="text" id="nama" class="acuerdo__input" value="<%= user.nombre %>" name="nombre" required>
+                            <div id="validation-message-nombre" class=""></div>
+                        </div>
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">Username</label>
+                            <label class="mb-3 descripcion" for="description">El nombre de usuario aparecerá en su dirección de FiboSer.
+                                https://www.fibonacciku.com/fibo/</label>
+                            <input class="" type="text" id="username" class="acuerdo__input" value="<%= user.username %>" name="username" required>
+                            <div id="validation-message-username" class=""></div>
+                        </div>
+                            
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">Email</label>
+                            <label class="mb-3 descripcion" for="description">Al tener un correo electrónico, puede cambiar la configuración de su otra cuenta.</label>
+                            <input class="" type="email" id="email" class="acuerdo__input" value="<%= user.email %>" name="email">
+                            <div id="validation-message-email" class=""></div>
+                        </div>
+        
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">Bio</label>
+                            <textarea class="" type="text" id="bio" cols="0" rows="5" maxlength="256" class="acuerdo__input" name="bio"><%= user.bio %></textarea>
+                            <div id="validation-message-bio" class=""></div>
+                        </div>
+
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">Website</label>
+                            <label class="mb-3 descripcion" for="description">Escribe tu sitio web:
+
+                                websiSer.com</label>
+                            <input class="" type="text" id="web" class="acuerdo__input" value="<%= user.website %>" name="web">
+                            <div id="validation-message-web" class=""></div>
+                        </div>
+
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">Instagram</label>
+                            <label class="mb-3 descripcion" for="description">Nombre de usuario solo sin @</label>
+                            <input class="" type="text" id="instagram" class="acuerdo__input" value="<%= user.instagram %>" name="instagram">
+                            <div id="validation-message-instagram" class=""></div>
+                        </div>
+
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">GitHub</label>
+                            <label class="mb-3 descripcion" for="description">Solo nombres de usuario</label>
+                            <input class="" type="text" id="github" class="acuerdo__input" value="<%= user.github %>" name="github">
+                            <div id="validation-message-github" class=""></div>
+                        </div>
+
+                        <div class="acuerdo__contenido">
+                            <label for="" class="acuerdo__label form-label">Twitter</label>
+                            <label class="mb-3 descripcion" for="description">Nombre de usuario solo sin @</label>
+                            <input class="" type="text" id="twitter" class="acuerdo__input" value="<%= user.twitter %>" name="twitter">
+                            <div id="validation-message-twitter" class=""></div>
+                        </div>
+            
+                        <div>
+                            <button type="submit" id="btn-submit" class="form-group btn-valid-error">
+                                Ahorrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/profil/cuenta.js" async></script>
+
+<script async>
+    document.title = 'Acuerdo - Cuenta | FiboSer'
+</script>

@@ -1,0 +1,78 @@
+<% layout('layouts/boilerplate') %> 
+
+<style>
+    .mata-pelajaran {
+        background-color: rgb(255, 248, 243);
+        margin-top: 80px;
+    }
+
+    .persiapan-ujian {
+        background-color: rgb(255, 227, 227);
+    }
+</style>
+
+<section class="mata-pelajaran">
+    <%- include('../partials/flash') %>
+    <div class="pelajaran container container--pall">
+        
+        <div class="pelajaran__intro">
+            <h1>Pilih Pelajaran Sesuka Kamu!</h1>
+        </div>
+    
+        <div class="pelajaran__grid">
+
+            <% for (let pelajaran of pelajarans) {%>
+                <div class="pelajaran__card">
+                    <div class="pelajaran__icon">
+                        <img src="<%= pelajaran.icon %>" alt="logo <%= pelajaran.pelajaran %>">
+                    </div>
+    
+                    <div class="pelajaran__title">
+                        <%= pelajaran.pelajaran %> 
+                    </div>
+        
+                    <a class="button" href="mata-pelajaran/<%= pelajaran.query %>">
+                        Belajar Disini!
+                    </a>
+                </div>
+            <%  }%>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="persiapan-ujian"> 
+    <div class="ujian container container--pall">
+
+        <div class="ujian__intro">
+            <h1>Belajar Persiapan Ujian!</h1>
+        </div>
+
+        <div class="ujian__grid">
+
+            <% for (let ujian of ujians) {%>
+                <div class="ujian__card">
+                    <div class="ujian__icon">
+                        <img src="<%= ujian.icon %>" alt="logo <%= ujian.pelajaran %>">
+                    </div>
+    
+                    <div class="ujian__title">
+                        <%= ujian.pelajaran %>
+                    </div>
+                    
+                    <a class="button" href="mata-pelajaran/<%= ujian.query %>">
+                        Belajar Disini!
+                    </a>
+                
+                </div>
+            <%  }%>
+
+        </div>
+
+    </div>
+</section>
+
+<script async>
+    document.title = "Mata Pelajaran | FibonacciKu";
+</script>

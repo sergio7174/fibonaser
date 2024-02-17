@@ -1,0 +1,51 @@
+<% layout('layouts/boilerplate') %>
+
+<style>
+    .shows-lecciones {
+        margin-top: 80px;
+    }
+</style>
+
+<section class="shows-lecciones">
+    <div class="shows">
+        <div class="shows__header">
+            <div class="container">
+                <div class="shows__lecciones">
+                    <img src="<%= lecciones.icon %>" alt="logo <%= lecciones.lecciones %>">
+                    <div class="header__belajar">
+                        <a href="/ojos-lecciones">
+                            <h3>Lecciones Visuales:</h3>
+                        </a>
+                        <h1><%= lecciones.lecciones %> </h1>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="container container--px">
+            <div class="shows__grid">
+                <% for (let capitulo of capitulos) {%>
+                <div class="shows__card">
+                    <div class="shows__icon">
+                        <a href="<%= lecciones.query %>/<%= capitulo.querycapitulo %>">
+                            <img src="<%= capitulo.icon %>" alt="logo <%= capitulo.capitulo %>">
+                        </a>
+                    </div>
+    
+                    <a href="<%= lecciones.query %>/<%= capitulo.querycapitulo %>" class="shows__capitulo">
+                        <h3>
+                            <%= capitulo.capitulo %> 
+                        </h3>
+                    </a>
+                </div>
+                <%  }%>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script async>
+    document.title = "<%= lecciones.lecciones %> | FibonaSer";
+</script>

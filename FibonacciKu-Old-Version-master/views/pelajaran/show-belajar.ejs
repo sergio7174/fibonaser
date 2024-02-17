@@ -1,0 +1,62 @@
+<% layout('layouts/boilerplate') %>
+
+<style>
+    .belajar {
+        margin-top: 80px;
+    }
+</style>
+
+<section class="belajar">
+    <div class="shows">
+        <div class="shows__header">
+            <div class="container">
+                <div class="shows__pelajaran">
+                    <img src="<%= babs.icon %>" alt="logo <%= babs.bab %>">
+                    <div class="header__belajar">
+                        <a href="/mata-pelajaran/<%= babs.query %>">
+                            <h3><%= babs.pelajaran %> </h3>
+                        </a>
+                        <h1><%= babs.bab %> </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container--px">
+            <div class="belajar__grid">
+                <% for (let subbab of subbabs) {%>
+                    <div class="belajar__card">
+                        <div class="belajar__subbab">
+                            <h3><%= subbab.subbab %> </h3>
+                        </div>
+
+                        <div class="belajar__konten">
+                            <div class="belajar__keterangan">
+                                <h4>Belajar</h4>
+                            </div>
+
+                            <div class="belajar__videos">
+                                <% for (let konten of kontens) {%> 
+                                    <% if(konten.subbab == subbab.subbab) {%>
+                                        <div class="konten">
+                                            <i class="uil uil-play-circle"></i>
+                                            <div class="judul">
+                                                <a data-modal-target="#modal" href="/mata-pelajaran/<%= konten.query %>/<%= konten.querybab %>/<%= konten.queryjudul %>">
+                                                    <%= konten.judul %>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <%  }%>
+                                <%  }%> 
+                            </div>
+                        </div>
+                    </div>
+                <%  }%>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script async>
+    document.title = "<%= babs.bab %> | FibonacciKu";
+</script>

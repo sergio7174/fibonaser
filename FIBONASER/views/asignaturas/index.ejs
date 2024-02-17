@@ -1,0 +1,78 @@
+<% layout('layouts/boilerplate') %> 
+
+<style>
+    .asignaturas {
+        background-color: rgb(255, 248, 243);
+        margin-top: 80px;
+    }
+
+    .preparacion-prueba {
+        background-color: rgb(255, 227, 227);
+    }
+</style>
+
+<section class="asignaturas">
+    <%- include('../partials/flash') %>
+    <div class="lecciones container container--pall">
+        
+        <div class="lecciones__intro">
+            <h1>¡Elige las lecciones que quieras!</h1>
+        </div>
+    
+        <div class="lecciones__grid">
+
+            <% for (let Lecciones of lecciones) {%>
+                <div class="lecciones__card">
+                    <div class="lecciones__icon">
+                        <img src="<%= lecciones.icon %>" alt="logo <%= lecciones.lecciones %>">
+                    </div>
+    
+                    <div class="lecciones__title">
+                        <%= Lecciones.lecciones %> 
+                    </div>
+        
+                    <a class="button" href="asignaturas/<%= lecciones.query %>">
+                        ¡Aprende aquí!
+                    </a>
+                </div>
+            <%  }%>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="preparacion-prueba"> 
+    <div class="prueba container container--pall">
+
+        <div class="prueba__intro">
+            <h1>¡Aprenda como prepararse para los exámenes!</h1>
+        </div>
+
+        <div class="prueba__grid">
+
+            <% for (let examen of examenes) {%>
+                <div class="prueba__card">
+                    <div class="prueba__icon">
+                        <img src="<%= examen.icon %>" alt="logo <%= examen.lecciones %>">
+                    </div>
+    
+                    <div class="prueba__title">
+                        <%= examen.lecciones %>
+                    </div>
+                    
+                    <a class="button" href="asignaturas/<%= examen.query %>">
+                        ¡Aprende aquí!
+                    </a>
+                
+                </div>
+            <%  }%>
+
+        </div>
+
+    </div>
+</section>
+
+<script async>
+    document.title = "Lecciones Visuales | FibonaSer";
+</script>

@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate') %> 
+<%- include('../partials/flash') %>
+
+<section class="forms">
+    
+    <div class="forms__image"></div> 
+
+    
+
+    <div class="forms__container sign-up-form">
+ 
+
+        <div class="forms__imgBox sign-up-imgBox">
+
+
+            <div class="sliding-link">
+                <p>¿Ya tienes una cuenta?</p>
+                <a class="sign-in-btn" href="/ingresar">Ingresar</a>
+            </div>
+            <img class="lista" src="img/ingresar/cartoon_nagakecil.png" alt="">
+        </div>
+          
+        <div class="forms__box sign-up-box">
+            <h2>Registro de Usuarios</h2>
+            <div class="login-options">
+                <div class="other-logins">
+                    <a href="/auth/google"><img src="img/ingresar/google.png" alt=""></a>
+                    <a href="/auth/github"><img src="img/ingresar/GitHub.png" alt=""></a>
+                    <a href="/auth/facebook"><img src="img/ingresar/facebook.png" alt=""></a>
+                </div>
+                <p class="text">O regístrate con un correo electrónico...</p>
+            </div>
+
+            <form action="/registrar" method="POST" novalidate class="validated-form">
+                <div class="field">
+                    <i class="uil uil-at"></i>
+                    <label for="email"></label>
+                    <input class="form-control" type="email" id="email" name="email" placeholder="email" required>
+                </div>
+
+                <div class="field">
+                    <i class="uil uil-user"></i>
+                    <label for="nombre"></label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" placeholder="nombre completo" required>
+                </div>
+
+                <div class="field">
+                    <i class="uil uil-user-circle"></i>
+                    <label for="username"></label>
+                    <input class="form-control" type="text" id="username" name="username" placeholder="username" maxlength="20" required>
+                </div>
+
+                <div class="field">
+                    <i class="uil uil-lock-alt"></i>
+                    <label for="password"></label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="password" minlength="8" required>
+                </div>
+
+                <button class="submit-btn">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+<script async>
+    document.title = "Registrar | FibonaSer";
+</script>
+
+<script>
+    const username = document.getElementById('username');
+    username.oninput = function() {
+        username.value = username.value.toLowerCase()
+    }
+</script>
+
+<script src="/js/ingresar/script.js" async></script>

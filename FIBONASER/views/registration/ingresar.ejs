@@ -1,0 +1,65 @@
+<% layout('layouts/boilerplate') %>
+<%- include('../partials/flash') %>
+
+<section class="forms">
+
+        <div class="forms__image"></div>
+        
+        <div class="forms__container sign-in-form">
+            <div class="forms__box sign-in-box">
+                <h2>Ingresar</h2>
+                <form action="/ingresar" method="POST" novalidate class="validated-form">
+                    <div class="field">
+                        <i class="uil uil-user-circle"></i>
+                        <label class="form-label" for="username"></label>
+                        <input class="form-control" type="text" id="username" name="username" maxlength="20" placeholder="Username" required>
+                    </div>
+
+
+                    <div class="field">
+                        <i class="uil uil-lock-alt"></i>
+                        <label class="form-label" for="password"></label>
+                        <input class="password-input form-control" type="password" id="password" name="password" placeholder="password" required>
+                        <div class="eye-btn"><i class="uil uil-eye-slash"></i></div>
+                    </div>
+
+                    <div class="forgot-link">
+                        <a href="/lupa-password">Lupa password?</a>
+                    </div>
+
+                    <button class="submit-btn">Ingresar</button>
+                </form>
+
+                <div class="login-options">
+                    <p class="text">O inicia sesión con...</p>
+                    <div class="other-logins">
+                        <a href="/auth/google"><img src="img/ingresar/google.png" alt=""></a>
+                        <a href="/auth/github"><img src="img/ingresar/GitHub.png" alt=""></a>
+                        <a href="/auth/facebook"><img src="img/ingresar/facebook.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forms__imgBox sign-in-imgBox">
+                <div class="sliding-link">
+                    <p>¿Todavía no tienes una cuenta?</p>
+                    <a class="sign-up-btn" href="/lista">Lista</a>
+                </div>
+                <img class="ingresar" src="img/ingresar/cartoon_ular.png" alt="">
+            </div>
+        </div>
+
+</section>
+
+<script async>
+    document.title = "Ingresar | FibonaSer"
+</script>
+
+<script>
+    const username = document.getElementById('username');
+    username.oninput = function() {
+        username.value = username.value.toLowerCase()
+    }
+</script>
+
+<script src="/js/ingresar/script.js" async></script>
