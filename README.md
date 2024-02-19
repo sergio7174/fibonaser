@@ -1,6 +1,7 @@
 <h1 align ="center" > 🎒📚 Fibona ser  </h1>
-<h5  align ="center"> 
-Fullstack open source Start using AI for your personal tutor instead of cheating tool made with MongoDB, Express, Nodejs  </h5>
+<h3  align ="center"> 
+ MEAN stack open source Students AI. </h3>
+ <h3>tool made with MongoDB, Express, Nodejs  </h3>
 <br>
 <br>
 
@@ -56,8 +57,8 @@ $ npm run  start (to start the client)  or nodemon app
 
 - User registration and login
 - Authentication using JWT Tokens
-- Add, edit, delete books
-- Search Live
+- Add, edit, delete subjects
+- Live Search 
 - 404 Page and many more
 - Responsive Design
 <br/>
